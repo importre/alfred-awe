@@ -50,7 +50,7 @@ function filter(items) {
 const items = alfy.cache.get('items');
 const now = alfy.config.get('now') || Date.now();
 const gap = Date.now() - now;
-const tolerance = 1000 * 3600 * 24;
+const tolerance = 1000 * 60;
 
 if (items && gap < tolerance) {
   const output = filter(items);
