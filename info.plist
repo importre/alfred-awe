@@ -96,7 +96,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Search awesome projects!</string>
 	<key>uidata</key>
 	<dict>
 		<key>8F7B901D-3BCD-4094-A694-D0E0D7367B62</key>
@@ -115,7 +115,7 @@
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.1.0</string>
+	<string>0.2.0</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
