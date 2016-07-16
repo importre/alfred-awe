@@ -6,10 +6,7 @@ function comp(a, b) {
   const i = a.indexOf(input);
   const j = b.indexOf(input);
   if (i >= 0 && j >= 0) {
-    if (i - j === 0) {
-      if (a.length === b.length) return a.localeCompare(b);
-      return a.length - b.length;
-    }
+    if (i - j === 0) return a.length - b.length;
     return i - j;
   }
   if (i >= 0) return -1;
@@ -47,26 +44,10 @@ function filter(items) {
     });
 }
 
-const items = alfy.cache.get('items');
-const now = alfy.config.get('now') || Date.now();
-const gap = Date.now() - now;
-const tolerance = 1000 * 60;
-
-if (items && gap < tolerance) {
-  const output = filter(items);
-  alfy.output(output);
-} else {
-  const url = 'https://alfred-workflows-62254.firebaseio.com/awe.json'
-  got(url)
-    .then(response => {
-      const items = JSON.parse(response.body);
-      alfy.cache.set('items', items);
-      const output = filter(items);
-      alfy.output(output);
-      alfy.config.set('now', Date.now());
-    })
-    .catch(error => {
-      alfy.log(error);
-    });
-}
+const url = 'https://alfred-workflows-62254.firebaseio.com/awe.json';
+alfy.fetch(url)
+  .then(items => {
+    const output = filter(items);
+    alfy.output(output);
+  });
 
