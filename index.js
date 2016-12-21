@@ -1,5 +1,6 @@
 const alfy = require('alfy');
 const got = require('got');
+const alfredNotifier = require('alfred-notifier');
 const input = alfy.input.toLowerCase();
 
 function comp(a, b) {
@@ -51,5 +52,6 @@ alfy.fetch(url, {
   .then(items => {
     const output = filter(items);
     alfy.output(output);
+    alfredNotifier();
   });
 
