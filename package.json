@@ -1,6 +1,6 @@
 {
   "name": "alfred-awe",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Alfred 3 workflow to find awesome projects",
   "license": "MIT",
   "repository": "importre/alfred-awe",
