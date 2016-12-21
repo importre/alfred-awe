@@ -13,7 +13,7 @@ You need [Node.js 4+](https://nodejs.org) and [Alfred 3](https://www.alfredapp.c
 ## Install
 
 ```
-$ npm i -g alfred-figlet
+$ npm i -g alfred-awe
 ```
 
 
